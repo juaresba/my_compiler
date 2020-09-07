@@ -24,9 +24,11 @@ class LexicalAnalyser:
     def next_token(self):
         token = TToken.UNKNOWN
 
+        # spaces
         while is_space(self.next_char):
             self.next_char = self.read_char()
 
+        # Ids and constants
         if is_alpha(self.next_char):
             token = self.handle_alpha()
 
@@ -39,10 +41,12 @@ class LexicalAnalyser:
         elif self.next_char == '\'':
             token = self.handle_char()
 
+        # simbols
         elif self.next_char == ':':
             self.next_char = self.read_char()
             token = TToken.COLON
         
+        # end of file
         elif self.next_char == '':
             token = TToken.EOF
         
