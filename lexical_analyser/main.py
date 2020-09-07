@@ -45,7 +45,35 @@ class LexicalAnalyser:
         elif self.next_char == ':':
             self.next_char = self.read_char()
             token = TToken.COLON
-        
+
+        elif self.next_char == ';':
+            self.next_char = self.read_char()
+            token = TToken.SEMI_COLON            
+
+        elif self.next_char == ',':
+            self.next_char = self.read_char()
+            token = TToken.COMMA
+
+        elif self.next_char == '=':
+            self.next_char = self.read_char()
+            token = TToken.EQUALS   
+
+        elif self.next_char == '[':
+            self.next_char = self.read_char()
+            token = TToken.LEFT_SQUARE              
+
+        elif self.next_char == ']':
+            self.next_char = self.read_char()
+            token = TToken.RIGHT_SQUARE      
+
+        elif self.next_char == '(':
+            self.next_char = self.read_char()
+            token = TToken.LEFT_PARENTHESIS  
+
+        elif self.next_char == ')':
+            self.next_char = self.read_char()
+            token = TToken.RIGHT_PARENTHESIS              
+
         # end of file
         elif self.next_char == '':
             token = TToken.EOF
