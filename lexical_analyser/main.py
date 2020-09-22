@@ -56,7 +56,11 @@ class LexicalAnalyser:
 
         elif self.next_char == '=':
             self.next_char = self.read_char()
-            token = TToken.EQUALS   
+            if self.next_char == '=':
+                self.next_char = self.read_char()
+                token = TToken.EQUAL_EQUAL      
+            else:
+                token = TToken.EQUALS                 
 
         elif self.next_char == '[':
             self.next_char = self.read_char()
@@ -72,8 +76,74 @@ class LexicalAnalyser:
 
         elif self.next_char == ')':
             self.next_char = self.read_char()
-            token = TToken.RIGHT_PARENTHESIS        
-                        
+            token = TToken.RIGHT_PARENTHESIS    
+
+        elif self.next_char == '&':
+            self.next_char = self.read_char()
+            if self.next_char == '&':
+                self.next_char = self.read_char()
+                token = TToken.AND
+
+        elif self.next_char == '|':
+            self.next_char = self.read_char()
+            if self.next_char == '|':
+                self.next_char = self.read_char()
+                token = TToken.OR
+
+        elif self.next_char == '>':
+            self.next_char = self.read_char()
+            if self.next_char == '=':
+                self.next_char = self.read_char()
+                token = TToken.GREATER_OR_EQUAL      
+            else:
+                token = TToken.GREATER_THAN   
+
+        elif self.next_char == '<':
+            self.next_char = self.read_char()
+            if self.next_char == '=':
+                self.next_char = self.read_char()
+                token = TToken.LESS_OR_EQUAL      
+            else:
+                token = TToken.LESS_THAN       
+                
+        elif self.next_char == '!':
+            self.next_char = self.read_char()
+            if self.next_char == '=':
+                self.next_char = self.read_char()
+                token = TToken.NOT_EQUAL      
+            else:
+                token = TToken.NOT   
+
+        elif self.next_char == '+':
+            self.next_char = self.read_char()
+            if self.next_char == '+':
+                self.next_char = self.read_char()
+                token = TToken.PLUS_PLUS      
+            else:
+                token = TToken.PLUS
+
+        elif self.next_char == '-':
+            self.next_char = self.read_char()
+            if self.next_char == '-':
+                self.next_char = self.read_char()
+                token = TToken.MINUS_MINUS      
+            else:
+                token = TToken.MINUS    
+
+        elif self.next_char == '*':
+            self.next_char = self.read_char()
+            token = TToken.TIMES
+
+        elif self.next_char == '/':
+            self.next_char = self.read_char()
+            token = TToken.DIVIDE     
+
+        elif self.next_char == '.':
+            self.next_char = self.read_char()
+            token = TToken.DOT                
+
+                                                                
+
 
         # end of file
         elif self.next_char == '':
