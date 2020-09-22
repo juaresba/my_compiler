@@ -72,7 +72,8 @@ class LexicalAnalyser:
 
         elif self.next_char == ')':
             self.next_char = self.read_char()
-            token = TToken.RIGHT_PARENTHESIS              
+            token = TToken.RIGHT_PARENTHESIS        
+                        
 
         # end of file
         elif self.next_char == '':
