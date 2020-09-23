@@ -9,5 +9,4 @@ while True:
     if token == TToken.EOF:
         break
 
-# for word in TToken:
-#     print(word)
+print(lexical_analyser.classifier.const_table)
