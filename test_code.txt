@@ -1,9 +1,9 @@
    if array 
     while
-        random_text alfanum2 most_random_text
+        random_text alfanum2 most_random_text random_text
                    
-                    function var
-; , =  [ ] ( )
+                    function var 'a'
+; , =  [ ] ( ) && || <= >= !=
                     :
             "my string :)"
-> > > = == = . * + ++ - -- - /
+> = == . * + ++ - -- - /

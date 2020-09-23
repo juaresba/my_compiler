@@ -5,6 +5,7 @@ import os
 class LexicalAnalyser:
     def __init__(self, code):
         self.next_char = '\x20'
+        self.secondary_token = None
         self.classifier = Classifier()
         try:
             print(code)
@@ -161,8 +162,8 @@ class LexicalAnalyser:
         
         token = self.classifier.search_key_word(text)
 
-        # if token == TToken.ID:
-        #     secondary_token = self.classifier.search_name(text)
+        if token == TToken.ID:
+            self.secondary_token = self.classifier.search_name(text)
 
         return token
 
