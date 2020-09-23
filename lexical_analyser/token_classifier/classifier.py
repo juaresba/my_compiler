@@ -42,7 +42,8 @@ class TToken(Enum):
     VAR = auto() 
     WHILE = auto()
 
-    # simbols
+    # simbols -> OK
+    # 
     COLON = auto() 
     SEMI_COLON = auto() 
     COMMA = auto() 

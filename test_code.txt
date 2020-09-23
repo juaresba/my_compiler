@@ -3,7 +3,7 @@
         random_text alfanum2 most_random_text
                    
                     function var
-
+; , =  [ ] ( )
                     :
             "my string :)"
-123413 aaaaa 'a' '9' aaaaa
+> > > = == = . * + ++ - -- - /
