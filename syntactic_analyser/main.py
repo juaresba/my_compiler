@@ -57,7 +57,6 @@ class Parser:
         self.TOKEN_TAB_ACTION=[TToken.INTEGER,TToken.CHAR,TToken.BOOLEAN,TToken.STRING,TToken.TYPE,TToken.EQUALS,TToken.ARRAY,TToken.LEFT_SQUARE,TToken.RIGHT_SQUARE,TToken.OF,TToken.STRUCT,TToken.LEFT_BRACES,TToken.RIGHT_BRACES,TToken.SEMI_COLON,TToken.COLON,TToken.FUNCTION,TToken.LEFT_PARENTHESIS,TToken.RIGHT_PARENTHESIS,TToken.COMMA,TToken.VAR,TToken.IF,TToken.ELSE,TToken.WHILE,TToken.DO,TToken.BREAK,TToken.CONTINUE,TToken.AND,TToken.OR,TToken.LESS_THAN,TToken.GREATER_THAN,TToken.LESS_OR_EQUAL,TToken.GREATER_OR_EQUAL,TToken.EQUAL_EQUAL,TToken.NOT_EQUAL,TToken.PLUS,TToken.MINUS,TToken.TIMES,TToken.DIVIDE,TToken.PLUS_PLUS,TToken.MINUS_MINUS,TToken.NOT,TToken.DOT,TToken.ID,TToken.TRUE,TToken.FALSE,TToken.CHARACTER,TToken.STRINGVAL,TToken.NUMERAL,TToken.EOF,PLINHA,P,LDE,DE,T,DT,DC,DF,LP,B,LDV,LS,DV,LI,S,U,M,E,L,R,Y,F,LE,LV,IDD,IDU,ID,TRUE,FALSE,CHR,STR,NUM,NB,MF,MC,NF,MT,ME,MW]
 
     def run(self):
-        print(self.lexical_analyser)
         state = 0
         self.state_stack.append(state)
         current_token = self.lexical_analyser.next_token()
@@ -65,7 +64,7 @@ class Parser:
         
         cont=0
         while (action!="acc"):
-            print(state, current_token, action)
+            #print(state, current_token, action)
             if (action[0]=="s"):
                 state=int(action[1:])
                 self.state_stack.append(state)
