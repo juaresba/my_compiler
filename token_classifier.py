@@ -75,7 +75,7 @@ class TToken(Enum):
     CHARACTER = auto()
     NUMERAL = auto()
     STRINGVAL = auto()
-    ID = auto()
+    ID = 71
     
     # end of file -> ok
     EOF = auto()

@@ -1,5 +1,5 @@
 from char_classifier import is_alnum, is_alpha, is_digit, is_space
-from token_classifier.classifier import Classifier, TToken
+from token_classifier import Classifier, TToken
 import os
 
 class LexicalAnalyser:

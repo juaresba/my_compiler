@@ -1,5 +1,5 @@
-from token_classifier.classifier import TToken
-from main import LexicalAnalyser
+from token_classifier import TToken
+from lexical_analyser import LexicalAnalyser
 
 lexical_analyser = LexicalAnalyser('test_code.txt')
 

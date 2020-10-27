@@ -1,0 +1,6 @@
+function main(arg:integer):integer
+{
+	var a:integer;
+	
+	a = 0;
+}
