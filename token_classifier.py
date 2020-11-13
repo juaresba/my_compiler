@@ -1,4 +1,4 @@
-from enum import Enum, auto
+from enum import IntEnum, auto
 
 RESERVED_WORDS = set([
     'array',
@@ -21,67 +21,62 @@ RESERVED_WORDS = set([
     'while',
 ])
 
-class TToken(Enum):
-    # reserved words -> ok
-    ARRAY = auto()
-    BOOLEAN = auto() 
-    BREAK = auto() 
-    CHAR = auto() 
-    CONTINUE = auto() 
-    DO = auto() 
-    ELSE = auto() 
-    FALSE = auto() 
-    FUNCTION = auto()
-    IF = auto() 
-    INTEGER = auto() 
-    OF = auto() 
-    STRING = auto() 
-    STRUCT = auto() 
-    TRUE = auto() 
-    TYPE = auto() 
-    VAR = auto() 
-    WHILE = auto()
+class TToken(IntEnum):
+    def _generate_next_value_(name, start, count, last_values):
+        start = 0
+        return start + count
 
-    # simbols -> OK
-    # 
-    COLON = auto() 
-    SEMI_COLON = auto() 
-    COMMA = auto() 
-    EQUALS = auto() 
+    INTEGER = auto()
+    CHAR = auto()
+    BOOLEAN = auto()
+    STRING = auto()
+    TYPE = auto()
+    EQUALS = auto()
+    ARRAY = auto()
     LEFT_SQUARE = auto() 
-    RIGHT_SQUARE = auto() 
+    RIGHT_SQUARE = auto()
+    OF = auto()
+    STRUCT = auto()
     LEFT_BRACES = auto()
-    RIGHT_BRACES = auto() 
+    RIGHT_BRACES = auto()
+    SEMI_COLON = auto()
+    COLON = auto()
+    FUNCTION = auto()
     LEFT_PARENTHESIS = auto() 
     RIGHT_PARENTHESIS = auto() 
+    COMMA = auto()
+    VAR = auto()
+    IF = auto()
+    ELSE = auto()
+    WHILE = auto()
+    DO = auto()
+    BREAK = auto() 
+    CONTINUE = auto() 
     AND = auto()
-    OR = auto() 
+    OR = auto()
     LESS_THAN = auto() 
     GREATER_THAN = auto() 
     LESS_OR_EQUAL = auto() 
     GREATER_OR_EQUAL = auto()
-    NOT_EQUAL = auto() 
-    EQUAL_EQUAL = auto() 
-    PLUS = auto() 
-    PLUS_PLUS = auto() 
-    MINUS = auto() 
-    MINUS_MINUS = auto() 
+    EQUAL_EQUAL = auto()
+    NOT_EQUAL = auto()
+    PLUS = auto()
+    MINUS = auto()
     TIMES = auto()
-    DIVIDE = auto() 
-    DOT = auto() 
+    DIVIDE = auto()
+    PLUS_PLUS = auto()  
+    MINUS_MINUS = auto() 
     NOT = auto()
-    
-    # regular tokens -> ok
+    DOT = auto() 
+    ID = auto()
+    TRUE = auto() 
+    FALSE = auto()   
     CHARACTER = auto()
-    NUMERAL = auto()
     STRINGVAL = auto()
-    ID = 71
-    
-    # end of file -> ok
+    NUMERAL = auto()
     EOF = auto()
-
-    # unknown token -> ok
-    UNKNOWN = auto()
+    UNKNOWN = -1
+    
 
 class Classifier:
     def __init__(self):

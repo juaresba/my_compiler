@@ -79,6 +79,14 @@ class LexicalAnalyser:
             self.next_char = self.read_char()
             token = TToken.RIGHT_PARENTHESIS    
 
+        elif self.next_char == '{':
+            self.next_char = self.read_char()
+            token = TToken.LEFT_BRACES  
+
+        elif self.next_char == '}':
+            self.next_char = self.read_char()
+            token = TToken.RIGHT_BRACES    
+
         elif self.next_char == '&':
             self.next_char = self.read_char()
             if self.next_char == '&':

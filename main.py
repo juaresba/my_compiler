@@ -1,4 +1,4 @@
-from syntactic_analyser.main import Parser
+from syntactic_analyser import Parser
 from lexical_analyser import LexicalAnalyser 
 
 
